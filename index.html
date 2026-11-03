@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101110">
+  <title>Vývoj výstupních periferií | Hardware Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="background-grid"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">H</span>
+      <span>HARDWARE<span class="brand-light"> / QUIZ</span></span>
+    </a>
+
+    <div class="topbar-right">
+      <span class="live-dot"></span>
+      <span>KNOWLEDGE CHECK</span>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="intro">
+      <div class="eyebrow">INTERACTIVE KNOWLEDGE TEST</div>
+      <h1>Vývoj výstupních<br><span>periferií počítačů.</span></h1>
+      <p>Vyber kartu a odpověz na otázku. Každá správná odpověď přináší bod.</p>
+    </section>
+
+    <section class="quiz-layout" id="quiz-layout">
+
+      <aside class="sidebar">
+        <div class="sidebar-heading">
+          <span>PRŮBĚH KVÍZU</span>
+          <span id="nav-count">0 / 15</span>
+        </div>
+
+        <div class="question-list" id="question-list"></div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="score-heading">AKTUÁLNÍ SKÓRE</div>
+        <div class="score-number"><span id="score">0</span><small>bodů</small></div>
+
+        <div class="score-track">
+          <div class="score-fill" id="score-fill"></div>
+        </div>
+
+        <div class="score-caption" id="score-caption">0 / 5 OTÁZEK</div>
+
+        <div class="score-stats">
+          <div>
+            <span class="stat-dot green"></span>
+            <span>Správně</span>
+            <strong id="correct-count">0</strong>
+          </div>
+          <div>
+            <span class="stat-dot red"></span>
+            <span>Špatně</span>
+            <strong id="wrong-count">0</strong>
+          </div>
+        </div>
+      </aside>
+
+      <section class="question-area">
+
+        <div class="sector-header">
+          <div>
+            <span class="sector-label" id="group-name">SEKTOR 01</span>
+            <h2 id="group-description">Základy, tiskárny a zobrazovací zařízení</h2>
+          </div>
+
+          <div class="sector-progress">
+            <span id="group-count">1 / 5</span>
+            <div class="sector-track">
+              <div id="group-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <article class="question-card" id="question-card">
+          <div class="question-meta">
+            <span id="question-category">MONITORY</span>
+            <span id="question-type">VÝBĚR ODPOVĚDI</span>
+          </div>
+
+          <div class="question-index">
+            <span id="question-number">01</span>
+            <span class="index-line"></span>
+            <span id="question-symbol">?</span>
+          </div>
+
+          <h2 id="question-title">Načítání otázky...</h2>
+          <p class="question-description" id="question-description"></p>
+
+          <div class="options" id="options"></div>
+
+          <div class="answer-panel" id="answer-panel" hidden>
+            <div class="answer-panel-top">
+              <span class="answer-indicator"></span>
+              <strong id="answer-result"></strong>
+            </div>
+            <p id="answer-explanation"></p>
+            <span class="answer-status" id="question-status"></span>
+          </div>
+
+          <div class="question-footer">
+            <button class="nav-button secondary" id="previous-button" type="button">
+              ← PŘEDCHOZÍ
+            </button>
+
+            <span id="position-label">1 / 15</span>
+
+            <button class="nav-button primary" id="next-button" type="button" disabled>
+              DALŠÍ →
+            </button>
+          </div>
+        </article>
+
+        <section class="finish-panel" id="finish-panel" hidden>
+          <div class="finish-icon">✓</div>
+          <div class="eyebrow">SECTOR COMPLETED</div>
+          <h2 id="finish-title">SEKTOR DOKONČEN</h2>
+          <p id="finish-text"></p>
+
+          <div class="final-stats">
+            <div>
+              <span>SKÓRE</span>
+              <strong id="final-score">0</strong>
+            </div>
+            <div>
+              <span>SPRÁVNĚ</span>
+              <strong id="final-correct">0</strong>
+            </div>
+            <div>
+              <span>ÚSPĚŠNOST</span>
+              <strong id="final-percent">0 %</strong>
+            </div>
+          </div>
+
+          <div class="group-results" id="group-results"></div>
+
+          <button class="restart-button" id="restart-button" type="button">
+            POKRAČOVAT →
+          </button>
+        </section>
+
+      </section>
+    </section>
+
+    <footer class="footer">
+      <span>HARDWARE QUIZ / 2026</span>
+      <span>VÝVOJ VÝSTUPNÍCH PERIFERIÍ</span>
+    </footer>
+  </main>
+</body>
+</html>
